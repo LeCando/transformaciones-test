@@ -36,19 +36,8 @@ public class ListaNumerosView extends Composite<VerticalLayout> {
         buttonPrimary.setText("Calcular un nuevo número");
         buttonPrimary.setWidth("min-content");
         buttonPrimary.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-
-       buttonPrimary.addClickListener(e -> {
-            numero1.setNumero(Integer.parseInt());
-            numero1.setBinario(numero1.binario);
-            numero1.setHexadecimal(Util.listaNumero.get(selTipo));
-            Util.listaNumero.add(numero1);
-
-            buttonPrimary.addClickListener(e -> UI.getCurrent().navigate("view-calculos"));
-            getContent().add(buttonPrimary);
-        });
-
-
-
+        buttonPrimary.addClickListener(e -> UI.getCurrent().navigate("view-calculos"));
+        getContent().add(buttonPrimary);
 
         Grid<Numero> grid = new Grid<>(Numero.class, false);
         grid.addColumn(Numero::getNumero).setHeader("Decimal").setSortable(true).setAutoWidth(true);

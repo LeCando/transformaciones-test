@@ -6,11 +6,11 @@ public class Numero {
 
 
     public int numero;
-    public int binario;
+    public String binario;
     public String hexadecimal;
 
 
-    public Numero(int numero, int binario, String hexadecimal) {
+    public Numero(int numero, String binario, String hexadecimal) {
         this.numero = numero;
         this.binario = binario;
         this.hexadecimal = hexadecimal;
@@ -38,11 +38,11 @@ public class Numero {
         this.numero = numero;
     }
 
-    public int getBinario() {
+    public String getBinario() {
         return binario;
     }
 
-    public void setBinario(int binario) {
+    public void setBinario(String binario) {
         this.binario = binario;
     }
 
@@ -53,4 +53,19 @@ public class Numero {
     public void setHexadecimal(String hexadecimal) {
         this.hexadecimal = hexadecimal;
     }
+
+    private String convertirABinario(int numero) {
+        StringBuilder binarioBuilder = new StringBuilder();
+        while (numero > 0) {
+            int bit = numero % 2;
+            binarioBuilder.insert(0, bit);
+            numero /= 2;
+        }
+        return binarioBuilder.toString();
+    }
+
+
+
+
+
 }
