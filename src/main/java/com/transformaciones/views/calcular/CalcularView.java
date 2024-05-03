@@ -2,6 +2,7 @@ package com.transformaciones.views.calcular;
 
 import com.transformaciones.views.MainLayout;
 import com.vaadin.flow.component.Composite;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.Uses;
@@ -28,5 +29,9 @@ public class CalcularView extends Composite<VerticalLayout> {
         buttonPrimary.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         getContent().add(textField);
         getContent().add(buttonPrimary);
+        buttonPrimary.addClickListener(e -> UI.getCurrent().navigate("lista-numeros"));
+
+
+
     }
 }
